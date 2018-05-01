@@ -17,7 +17,7 @@ function quickSort(arr, p, r) {
     }
 }
 
-// swap two array value
+// swap two array values
 function swap(arr, k, l) {
     var temp = arr[k];
     arr[k] = arr[l];
