@@ -30,3 +30,21 @@ var linkedList = function(dataList){
 var list = linkedList([3,5,8,2,8]);
 
 console.log(list);
+
+/* list={
+    val:3,
+    next:{
+        var:5,
+        next:{
+            val:8,
+            next:{
+                val:2,
+                next:{
+                    val:8,
+                    next:null
+                }
+            }
+        }
+    }
+}
+ */
