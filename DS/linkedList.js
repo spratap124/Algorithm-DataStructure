@@ -1,12 +1,12 @@
 // linked list implementation
 
-//create new node
+// new node constructor
 function Node(val) {
     this.val = val;
     this.next = null;
 }
 
-//linked list
+//linked list constructor
 function linkedList() {
 
     this.front = null;
