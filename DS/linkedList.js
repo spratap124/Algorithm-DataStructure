@@ -1,6 +1,4 @@
-
 // linked list implementation
-
 
 //create new node
 function Node(val) {
@@ -13,9 +11,7 @@ function linkedList() {
 
     this.front = null;
     this.insert = insert;
-    this.insertNode = insertNode;
     this.deleteNode = deleteNode;
-    this.delNode = delNode;
     this.print = print;
 }
 
@@ -24,27 +20,21 @@ function insert(data) {
     // Creating a node and initailising 
     // with data 
     var newNode = new Node(data);
+    var pointer = this.front;
 
     // if front is null then node will
     // be added to the list and made front.
     if (this.front == null) {
         this.front = newNode;
     } else {
-        this.insertNode(this.front, newNode);
+        //if there is next node then move to next node
+        while (pointer.next != null) {
+            //move the pointer to the next node
+            pointer = pointer.next;
+        }
+        pointer.next = newNode;
     }
 
-}
-
-function insertNode(node, newNode) {
-
-    //find the last node
-    if (node.next == null) {
-        node.next = newNode;
-    }
-    //if there is next node then move to next node
-    else {
-        this.insertNode(node.next, newNode);
-    }
 }
 
 //delete a node
@@ -96,7 +86,6 @@ function print() {
     console.log("//list.insert(34)");
     console.log("//list.deleteNode(34)");
 }
-
 
 var list = new linkedList();
 list.insert(3);
