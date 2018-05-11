@@ -1,50 +1,49 @@
-/*
-* Linked List implementation using js
-*/
-
 //create new node
-var Node = function(data){
-    this.val = data;
+function Node(val) {
+    this.val = val;
     this.next = null;
-};
-
-var linkedList = function(dataList){
-    //create first node
-    var list = new Node(dataList[0]);
-
-    //create a pointer, pointing first node initially
-    var pointer = list;
-
-    for(var i = 1; i<dataList.length; i++){
-        if(!pointer.next){
-            var newNode = new Node(dataList[i]);
-            pointer.next = newNode;
-            pointer = pointer.next;
-        }else{
-            pointer = pointer.next;
-        }
-    }
-    return list;
 }
 
-var list = linkedList([3,5,8,2,8]);
+//linked list
+function linkedList() {
 
-console.log(list);
+    this.front = null;
+    this.insert = insert;
+    this.insertNode = insertNode;
+}
 
-/* list={
-    val:3,
-    next:{
-        var:5,
-        next:{
-            val:8,
-            next:{
-                val:2,
-                next:{
-                    val:8,
-                    next:null
-                }
-            }
-        }
+function insert(data) {
+    // Creating a node and initailising 
+    // with data 
+    var newNode = new Node(data);
+
+    // front is null then node will
+    // be added to the list and made front.
+    if (this.front == null) {
+        this.front = newNode;
+    } else {
+        this.insertNode(this.front, newNode);
     }
 }
- */
+
+function insertNode(node, newNode) {
+
+    //find the last node
+    if (node.next == null) {
+        node.next = newNode;
+    }
+    //if there next node then move to next node
+    else {
+        this.insertNode(node.next, newNode);
+    }
+
+}
+
+
+//initialize the list
+var list = new linkedList();
+
+list.insert(2);
+list.insert(5);
+
+console.log(list.front);
