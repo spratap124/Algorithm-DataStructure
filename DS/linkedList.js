@@ -42,15 +42,12 @@ function deleteNode(data) {
     var head = this.front;
     var prevNode = this.front;
     var temp = this.front;
-    // var currentNode = this.front;
-    // var nextNode = currentNode.next;
 
     // If head node itself holds the key to be deleted
     if (temp != null && temp.val == data) {
         //change head
-        head = Object.assign({}, temp.next);
-        //delete first node
-        delete temp;
+        head= temp.next;
+        
         //point the front to the head
         this.front = head;
     }
@@ -66,6 +63,7 @@ function deleteNode(data) {
     if (temp == null) {
         console.log("data not found");
     } else {
+        //if found the key,
         // Unlink the node from linked list
         prevNode.next = temp.next;
         this.print();
