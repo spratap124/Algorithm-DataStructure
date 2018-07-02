@@ -34,20 +34,20 @@ function insert(data){
 
 //find correct location and insert the node
 function addNewNode(root, newNode){
-    //if data is smaller than root
-    if(newNode.data < root.data){
+    
+    if (newNode.data < root.data) {    //if data is smaller than root
         if(root.left == null){
             root.left = newNode;
         }else{
             addNewNode(root.left, newNode);
         }
-    }else{
+    } else if (newNode.data > root.data){ //if data is greater than root
         if(root.right == null){
             root.right = newNode;
         }else{
             addNewNode(root.right, newNode);
         }
-    }
+    } 
 }
 
 
@@ -105,7 +105,7 @@ function printPostOrder(root){
 
 }
 
-var arr = [12,3,7,1,8,2,25,27,20,30]
+var arr = [12,3,7,1,8,2,25,2,27,20,30]
 
 var BST = new BST();
 
