@@ -46,8 +46,8 @@ function deleteNode(data) {
     // If head node itself holds the key to be deleted
     if (temp != null && temp.val == data) {
         //change head
-        head= temp.next;
-        
+        head = temp.next;
+
         //point the front to the head
         this.front = head;
     }
@@ -85,10 +85,12 @@ function print() {
     console.log("//list.deleteNode(34)");
 }
 
+var data = [3,4,5,6,7,8,9];
+
 var list = new linkedList();
-list.insert(3);
-list.insert(4);
-list.insert(5);
-list.insert(6);
-list.insert(8);
+
+data.forEach(function(d){
+    list.insert(d);
+});
+
 list.print();
